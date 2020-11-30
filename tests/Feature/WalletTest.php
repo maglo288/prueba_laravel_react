@@ -20,10 +20,10 @@ class WalletTest extends TestCase
     {
         
         $wallet = \App\Models\Wallet::factory(Wallet::class)->create();
-        $transfers = \App\Models\Transfer::factory(Transfer::class)->create([
+        $transfers = \App\Models\Transfer::factory(Transfer::class)->count(3)->create([
             'wallet_id' => $wallet->id
         ]);
-        $response = $this->json('GET','wallet');
+        $response = $this->json('GET','/api/wallet');
 
         $response->assertStatus(200)
             ->assertJsonStructure([

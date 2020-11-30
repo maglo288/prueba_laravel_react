@@ -9,6 +9,6 @@ class Wallet extends Model
 {
     use HasFactory;
     public function transfers(){
-        return $this->hasMany('App\Transfer');
+        return $this->hasMany('\App\Models\Transfer');
     }
 }

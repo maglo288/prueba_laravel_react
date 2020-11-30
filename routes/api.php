@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 /*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });*/
-Route::get('/wallet','WalletController@index')->name('wallet');
+Route::get('/wallet','App\Http\Controllers\WalletController@index');
+Route::post('/transfer','App\Http\Controllers\TransferController@store');
